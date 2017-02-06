@@ -42,7 +42,4 @@ jspm_packages
 .release.json
 
 # Node transpiled files
-dist
-
-# Browser build files
 build

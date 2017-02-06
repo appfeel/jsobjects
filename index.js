@@ -1,1 +1,1 @@
-module.exports = require('./dist/jsobjects');
+module.exports = require('./build/jsobjects');

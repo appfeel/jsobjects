@@ -68,7 +68,7 @@ bower install jsobjects --save
 See demo in `./demo` folder.
 
 ```html
-<script src="bower_components/build/bundle.js"></script>
+<script src="bower_components/dist/bundle.js"></script>
 ```
 
 ```js
