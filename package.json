@@ -1,6 +1,6 @@
 {
   "name": "jsobjects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A js library to access and manipulate objects",
   "main": "index.js",
   "scripts": {
@@ -14,9 +14,8 @@
     "lint": "./node_modules/.bin/eslint 'lib/**/*.js' --ignore-path .eslintignore",
     "lint-report": "./node_modules/.bin/eslint 'lib/**/*.js' --ignore-path .eslintignore -f ./node_modules/eslint-html-reporter/reporter.js -o logs/eslint-report.html || opn ./logs/eslint-report.html",
     "plato": "plato -r -d logs/plato -t 'JSObjects' -e .eslintrc lib/ && opn logs/plato/index.html",
-    "prepublish": "npm run lint-report && npm run cover-report",
-    "test": "./node_modules/.bin/_mocha test/test.js --timeout 15000 --compilers js:babel-core/register",
-    "webpack": "webpack"
+    "prepublish": "npm run lint-report && npm run cover-report && npm run build",
+    "test": "./node_modules/.bin/_mocha test/test.js --timeout 15000 --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -55,8 +54,7 @@
     "mocha-lcov-reporter": "1.2.0",
     "opn-cli": "3.1.0",
     "rimraf": "2.5.4",
-    "sinon": "1.17.7",
-    "webpack": "2.2.1"
+    "sinon": "1.17.7"
   },
   "bugs": {
     "url": "https://github.com/appfeel/jsobjects/issues"
