@@ -1,6 +1,6 @@
 
 // http://stackoverflow.com/questions/6491463/accessing-nested-javascript-objects-with-string-key
-export const getObjectByPath = (obj, path, pathReplacements, offset) => {
+export function getObjectByPath(obj, path, pathReplacements, offset) {
     const replacements = (pathReplacements || []).slice(0); // Don't touch my array!
     const normalizedPath = path.replace(/^\./, '');           // strip a leading dot
     const pathArray = normalizedPath.split('.');
@@ -22,7 +22,7 @@ export const getObjectByPath = (obj, path, pathReplacements, offset) => {
     }
 
     return obj;
-};
+}
 
 /**
  * Converteix 'attrs.*.options.*.dn.*.ap' en
@@ -35,7 +35,7 @@ export const getObjectByPath = (obj, path, pathReplacements, offset) => {
  *     "attrs.1.options.1.dn.0.ap"
  * ]
  */
-export const expandPath = (obj, path, cb = (a, b) => b) => {
+export function expandPath(obj, path, cb = (a, b) => b) {
     const parts = (path || '').split('.*.');
     const partsLen = parts.length;
     let expandedPaths = [];

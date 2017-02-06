@@ -1,1 +1,1 @@
-export * from './lib/jsobjects';
+module.exports = require('./dist/jsobjects');

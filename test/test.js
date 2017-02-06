@@ -2,7 +2,7 @@
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import { expandPath, getObjectByPath, updateObjectByPath } from '../';
+import { expandPath, getObjectByPath, updateObjectByPath } from '../src/jsobjects';
 
 const arrstr = ['string 1', 'string 2'];
 const arrobj = [

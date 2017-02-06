@@ -5,9 +5,8 @@
 	"exclude": [
         ".idea",
         ".vscode",
-        "app",
+        "build",
 		"bower_components",
-        "certs",
         "dist",
         "docs",
 		"jspm_packages",
@@ -16,9 +15,6 @@
         "scripts",
         "typings",
         "uploads",
-        "www",
-        "plugins",
-        "platforms",
 		"temp",
 		"tmp"
 	]

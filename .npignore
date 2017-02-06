@@ -39,10 +39,8 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-.release.json
+# This is ES6, not yet supported in node
+lib
 
-# Node transpiled files
+# This is browser, not needed in node
 dist
-
-# Browser build files
-build

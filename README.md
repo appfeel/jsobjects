@@ -65,12 +65,17 @@ const object = {
 bower install jsobjects --save
 ```
 
+See demo in `./demo` folder.
+
 ```html
 <script src="bower_components/build/bundle.js"></script>
 ```
 
 ```js
-// Will use this objects to show ussage in examples
+// This module exposes require from browserify
+var jsobjects = require('jsobjects');
+
+// Will use this objects to show usage in examples
 var arrstr = ['string 1', 'string 2'];
 var arrobj = [
     {
