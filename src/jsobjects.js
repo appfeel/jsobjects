@@ -90,9 +90,9 @@ export function expandPath(obj, path, cb = (a, b) => b) {
     }
 
     return expandedPaths;
-};
+}
 
-export const updateObjectByPath = (obj, path, newValue, pathReplacements) => {
+export function updateObjectByPath(obj, path, newValue, pathReplacements) {
     const normalizedPath = path.replace(/^\./, '');
     const lastKey = normalizedPath.split('.').slice(-1)[0];
     try {
@@ -100,4 +100,4 @@ export const updateObjectByPath = (obj, path, newValue, pathReplacements) => {
         selectedObject[lastKey.replace(/'/g, '').replace(/(\['|\["|'\]|"\])/g, '')] = newValue;
     } catch (e) { } // eslint-disable-line no-empty
     return obj;
-};
+}
