@@ -6,8 +6,8 @@ This small library allows you to manipulate objects via string path. It can be u
 ![License: EUPL v1.1](http://img.shields.io/badge/License-EUPL_v1.1-blue.svg?style=flat)
 [![NPM version](http://img.shields.io/npm/v/jsobjects.svg?style=flat)](https://npmjs.org/package/jsobjects)
 [![Downloads](http://img.shields.io/npm/dm/jsobjects.svg?style=flat)](https://npmjs.org/package/jsobjects)
-[![Build Status](http://img.shields.io/travis/appfeel/jsobjects.svg?style=flat)](https://travis-ci.org/appfeel/jsobjects)
-[![Coverage Status](https://coveralls.io/repos/github/appfeel/jsobjects/badge.svg?branch=master)](https://coveralls.io/github/appfeel/jsobjects?branch=master)
+[![Build Status](https://travis-ci.org/appfeel/jsobjects.svg?branch=master)](https://travis-ci.org/appfeel/jsobjects)
+[![Coverage Status](https://coveralls.io/repos/github/appfeel/jsobjects/badge.svg)](https://coveralls.io/github/appfeel/jsobjects)
 
 
 ## Node.js
