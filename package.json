@@ -7,7 +7,7 @@
     "build": "npm run clean && npm run browserify",
     "build-babel": "babel lib -d build",
     "browserify": "browserify index.js -o build/bundle.js -t [ babelify --presets [ es2015 stage-0 ] ]",
-    "clean": "rimraf build && mkdir build",
+    "clean": "rimraf build && mkdir -p build",
     "cover": "./node_modules/.bin/babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/.bin/_mocha -- test/test.js",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "cover-report": "./node_modules/.bin/babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/.bin/_mocha -- test/test.js; opn ./coverage/lcov-report/index.html",
