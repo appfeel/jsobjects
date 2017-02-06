@@ -34,7 +34,7 @@ var getObjectByPath = exports.getObjectByPath = function getObjectByPath(obj, pa
     var key = void 0;
 
     for (i = 0; i < pathArrayLen; i += 1) {
-        key = pathArray[i].replace(/\['(.*)'\]/g, '$1'); // convert indexes to properties
+        key = pathArray[i].replace(/\['(.*)'\]/g, '$1').replace(/\["(.*)"\]/g, '$1'); // convert indexes to properties
         if (key === '*' && replacements && replacements.length) {
             key = replacements.shift();
         }
@@ -128,7 +128,7 @@ var updateObjectByPath = exports.updateObjectByPath = function updateObjectByPat
     var lastKey = normalizedPath.split('.').slice(-1)[0];
     try {
         var selectedObject = getObjectByPath(obj, path, pathReplacements, 1);
-        selectedObject[lastKey.replace(/'/g, '').replace(/(\[|\])/g, '')] = newValue;
+        selectedObject[lastKey.replace(/'/g, '').replace(/(\['|\["|'\]|"\])/g, '')] = newValue;
     } catch (e) {} // eslint-disable-line no-empty
     return obj;
 };

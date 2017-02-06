@@ -1,0 +1,26 @@
+{
+  "name": "jsobjects",
+  "description": "A js library to access and manipulate objects",
+  "main": "build/bundle.js",
+  "authors": [
+    "Miquel Martín (AppFeel)"
+  ],
+  "license": "EUPL-1.1",
+  "keywords": [
+    "javascript",
+    "object",
+    "access",
+    "update",
+    "manipulate",
+    "modify",
+    "path"
+  ],
+  "homepage": "https://github.com/appfeel/jsobjects",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
