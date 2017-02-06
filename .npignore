@@ -43,4 +43,4 @@ jspm_packages
 lib
 
 # This is browser, not needed in node
-build
+dist
