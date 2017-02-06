@@ -15,6 +15,7 @@ This small library allows you to manipulate objects via string path. It can be u
 ```js
 import { expandPath, getObjectByPath, updateObjectByPath } from 'jsobjects';
 
+// Will use this objects to show ussage in examples
 const arrstr = ['string 1', 'string 2'];
 const arrobj = [
     {
@@ -61,6 +62,7 @@ const object = {
 ```
 
 ```js
+// Will use this objects to show ussage in examples
 var arrstr = ['string 1', 'string 2'];
 var arrobj = [
     {
@@ -100,19 +102,20 @@ var object = {
 };
 ```
 
+# API
+=====
+
 ## getObjectByPath
+`getObjectByPath(object, path, pathReplacements, offset)`
 
 Given an object and a path or generic path, returns the value contained in the object at the specified path.
-
-### Usage
-`getObjectByPath(object, path, pathReplacements, offset)`
 
 - `object`: The object to search for `path`
 - `path`: The path to be expanded, accepts `.*` notation
 - `pathReplacements`: Every `*` in path will be replaced by corresponding in pathReplacements array: `('arr.*.arrarrobj.*.arrkey1', [0, 1])` will be assimilated to `arr.0.arrarrobj.1.arrkey1`
 - `offset`: Number of paths to skip at the end: `('arr.*.arrarrobj.*.arrkey1', [0, 1], 3)` will be assimilated to `arr.0`
 
-### Examples
+#### Examples
 
 ```js
 
@@ -125,19 +128,17 @@ getObjectByPath(object, 'arr.*.arrarrobj.*.["arr obj key 2"]', [1, 1], 1) === ob
 
 
 ## expandPath
+`expandPath(object, path, callback)`
 
 Given an object and a generic path, returns an array with all the paths found in the object.
 Complex keys (not single word) allows to be refferenced with `["name of the key"]` or `['name of the key']`.
-
-### Usage
-`expandPath(object, path, callback)`
 
 - `object`: The object to search for `path`
 - `path`: The path to be expanded, accepts `.*` notation
 - `callback`: (Optional) a callback function that will be called for each entry found
 
 
-### Exapmles
+#### Examples
 
 ```js
 expandPath(object, 'arrstr'); // will output: ['arrstr.0', 'arrstr.1'];
@@ -179,16 +180,16 @@ expandPath(object, 'arr.*.arrarrstr', cb); // will output: ['arr.0.arrarrstr', '
 ```
 
 ## updateObjectByPath
-
-### Usage
 `updateObjectByPath(object, path, newValue, pathReplacements)`
+
+Update the object at a given path with a specified value.
 
 - `object`: The object to search for `path`
 - `path`: The path to be expanded, accepts `.*` notation
 - `newValue`: The new value to be assigned
 - `pathReplacements`: Every `*` in path will be replaced by corresponding in pathReplacements array: `('arr.*.arrarrobj.*.arrkey1', [0, 1])` will be assimilated to `arr.0.arrarrobj.1.arrkey1`
 
-### Examples
+#### Examples
 
 ```js
 updateObjectByPath(object, 'arrobj.*.arrobjkey1', 'new value', [1]);
