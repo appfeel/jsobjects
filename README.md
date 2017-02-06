@@ -12,6 +12,10 @@ This small library allows you to manipulate objects via string path. It can be u
 
 ## Node.js
 
+```
+$ npm i jsobjects --save
+```
+
 ```js
 import { expandPath, getObjectByPath, updateObjectByPath } from 'jsobjects';
 
@@ -56,6 +60,10 @@ const object = {
 ```
 
 ## browser
+
+```
+bower install jsobjects --save
+```
 
 ```html
 <script src="bower_components/build/bundle.js"></script>
