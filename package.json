@@ -9,9 +9,10 @@
     "browserify": "browserify index.js -o build/bundle.js -t [ babelify --presets [ es2015 stage-0 ] ]",
     "clean": "rimraf build && mkdir build",
     "cover": "./node_modules/.bin/babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/.bin/_mocha -- test/test.js; opn ./coverage/lcov-report/index.html",
-    "lint": "./node_modules/.bin/eslint 'lib/**/*.js' --ignore-path .eslintignore -f ./node_modules/eslint-html-reporter/reporter.js -o logs/eslint-report.html || opn ./logs/eslint-report.html",
+    "lint": "./node_modules/.bin/eslint 'lib/**/*.js' --ignore-path .eslintignore",
+    "lint-report": "./node_modules/.bin/eslint 'lib/**/*.js' --ignore-path .eslintignore -f ./node_modules/eslint-html-reporter/reporter.js -o logs/eslint-report.html || opn ./logs/eslint-report.html",
     "plato": "plato -r -d logs/plato -t 'JSObjects' -e .eslintrc lib/ && opn logs/plato/index.html",
-    "prepublish": "npm run lint && npm run plato && npm run cover",
+    "prepublish": "npm run lint && npm run cover",
     "test": "./node_modules/.bin/_mocha test/test.js --timeout 15000 --compilers js:babel-core/register",
     "webpack": "webpack"
   },
