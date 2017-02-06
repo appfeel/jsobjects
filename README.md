@@ -13,7 +13,7 @@ This small library allows you to manipulate objects via string path. It can be u
 ## Node.js
 
 ```
-$ npm i jsobjects --save
+npm i jsobjects --save
 ```
 
 ```js
@@ -111,7 +111,6 @@ var object = {
 ```
 
 # API
-=====
 
 ## getObjectByPath
 `getObjectByPath(object, path, pathReplacements, offset)`
