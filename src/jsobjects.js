@@ -8,17 +8,21 @@ export function getObjectByPath(obj, path, pathReplacements, offset) {
     let i;
     let key;
 
-    for (i = 0; i < pathArrayLen; i += 1) {
-        key = pathArray[i].replace(/\['(.*)'\]/g, '$1').replace(/\["(.*)"\]/g, '$1'); // convert indexes to properties
-        if (key === '*' && replacements && replacements.length) {
-            key = replacements.shift();
-        }
+    try {
+        for (i = 0; i < pathArrayLen; i += 1) {
+            key = pathArray[i].replace(/\['(.*)'\]/g, '$1').replace(/\["(.*)"\]/g, '$1'); // convert indexes to properties
+            if (key === '*' && replacements && replacements.length) {
+                key = replacements.shift();
+            }
 
-        if (key in obj) {
-            obj = obj[key]; // eslint-disable-line no-param-reassign
-        } else {
-            return null;
+            if (key in obj) {
+                obj = obj[key]; // eslint-disable-line no-param-reassign
+            } else {
+                return null;
+            }
         }
+    } catch (err) {
+        obj = null; // eslint-disable-line no-param-reassign
     }
 
     return obj;

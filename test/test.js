@@ -16,6 +16,9 @@ const arrobj = [
     },
 ];
 const object = {
+    emptyKey: '',
+    nullKey: null,
+    undefinedKey: undefined,
     key1: 'key1',
     'key 2': 'key 2',
     arrstr,
@@ -163,6 +166,10 @@ describe('Util', () => {
         it('arr.*.arrarrobj.*.["arr obj key 2"], * = 1, 1, offset bigger than path length (10)', () => expect(getObjectByPath(object, 'arr.*.arrarrobj.*.["arr obj key 2"]', [1, 1], 10)).to.be.equal(object));
 
         it('unexistingkey', () => expect(getObjectByPath(object, 'unexistingkey')).to.be.null);
+        it('emptyKey.wrong', () => expect(getObjectByPath(object, 'emptyKey.wrong')).to.be.null);
+        it('nullKey.wrong', () => expect(getObjectByPath(object, 'nullKey.wrong')).to.be.null);
+        it('undefinedKey.wrong', () => expect(getObjectByPath(object, 'undefinedKey.wrong')).to.be.null);
+        it('arr.20', () => expect(getObjectByPath(object, 'arr.20')).to.be.null);
         it('unexistingkey.unexistingkey', () => expect(getObjectByPath(object, 'unexistingkey.unexistingkey')).to.be.null);
     });
 
